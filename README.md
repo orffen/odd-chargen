@@ -5,8 +5,6 @@ This is a character generator for the tabletop roleplaying game [Into the Odd](h
 Simply run the compiled executable and it will spit out a character right to your console.
 
 
-MIT License
-
 Copyright (c) 2019 Steve Simenic
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
