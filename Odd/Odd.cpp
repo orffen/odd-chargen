@@ -93,7 +93,7 @@ int main()
 			"Bolt-Cutters, Blunderbuss(d8 B), Fiddle",
 			"Pistol (d6), Grease, Hand Drill, Drum",
 			"Sword & Dagger (d8 B), Magnifying Glass. Lost Eye",
-			"Pistol (d6), Acid, Animal Repellent. Prosthetic Hand"
+			"Pistol (d6), Acid, Animal Repellent. Prosthetic Hand",
 			"Sword (d6), Steel Wire. Ugly Mutation",
 			"Sword (d6), Ferret, Tattered Clothes. Debt (3G)"
 		},
