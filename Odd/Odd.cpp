@@ -21,21 +21,14 @@
  *
  */
 
-#include "pch.h"
+#include "roll.h"
 #include <algorithm>
-#include <array>
 #include <iostream>
-#include <random>
 #include <string>
+#include <vector>
 
-int roll() { // rolls a d6, returns the result
-	std::random_device rd;
-	std::mt19937 gen(rd());
-	std::uniform_int_distribution<> dist(1, 6);
-	return dist(gen);
-}
-
-int main() {
+int main() 
+{
 	int strength = roll() + roll() + roll();
 	int dexterity = roll() + roll() + roll();
 	int wisdom = roll() + roll() + roll();
@@ -43,7 +36,7 @@ int main() {
 
 	int max_score = std::max({ strength - 9, dexterity - 9, wisdom - 9, 0 }); // convert to array index
 
-	const std::array<std::array<std::string, 10>, 6> gear{ {
+	const std::vector<std::vector<std::string>> gear{ {
 		{
 			"Sword (d6), Pistol (d6), Modern Armour, Sense nearby unearthly beings",
 			"Rifle (d8), Bayonet (d6), Lighter Boy, Arcanum",
