@@ -32,90 +32,96 @@ int main()
 	int strength = roll() + roll() + roll();
 	int dexterity = roll() + roll() + roll();
 	int wisdom = roll() + roll() + roll();
-	int hit_points = roll();
+	int hit_protection = roll();
 
 	int max_score = std::max({ strength - 9, dexterity - 9, wisdom - 9, 0 }); // convert to array index
 
 	const std::vector<std::vector<std::string>> gear{ {
 		{
-			"Sword (d6), Pistol (d6), Modern Armour, Sense nearby unearthly beings",
-			"Rifle (d8), Bayonet (d6), Lighter Boy, Arcanum",
-			"Rifle (d8), Modern Armour, Hound, Arcanum",
+			"Sword (d6), Pistol (d6), Modern Armour. Sense nearby unearthly beings",
+			"Rifle (d8 B), Bayonet (d6), Lighter Boy, Arcanum",
+			"Rifle (d8 B), Modern Armour, Hound, Arcanum",
 			"Club (d6), Throwing Knives, Arcanum",
 			"Pistol (d6), Ether, Poison, Arcanum",
 			"Cane (d6), Acid, Spyglass, Arcanum",
-			"Pistol Brace (d8), Canary, Ether",
-			"Musket (d8), Pocket-watch, Bomb",
-			"Halberd (d8), Fake Pistol, Artificial Lung",
-			"Garotte (d6), Musket (d8), Mute"
+			"Brace of Pistols (d8 B), Canary, Ether",
+			"Musket (d8 B), Pocket-watch, Bomb",
+			"Halberd (d8 B), Fake Pistol. Artificial Lung",
+			"Garotte (d6), Musket (d8 B). Mute"
 		},
 		{
-			"Musket (d8), Sword (d6), Flashbang, Sense nearby Arcana.",
-			"Musket (d8), Hatchet (d6), Hawk, Arcanum",
+			"Musket (d8 B), Sword (d6), Flashbang. Sense nearby Arcana",
+			"Musket (d8 B), Hatchet (d6), Hawk, Arcanum",
 			"Hatchet (d6), Pistol (d6), Bolt-Cutters, Arcanum",
-			"Musket (d8), Mule, Arcanum",
-			"Sword (d6), Pistol (d6), Modern Armour",
+			"Musket (d8 B), Mule, Arcanum",
+			"Sword (d6), Pistol (d6), Crude Armour",
 			"Pistol (d6), Bell, Steel Wire, Smoke-bomb",
-			"Longaxe (d8), Ferret, Fire Oil",
-			"Staff (d8), Tongs, Glue",
-			"Pistol (d6), Net, Prosthetic Leg, Trumpet",
-			"Pistol (d6), Grease, Hacksaw, One Arm"
+			"Longaxe (d8 B), Ferret, Fire Oil",
+			"Staff (d6 B), Tongs, Glue",
+			"Pistol (d6), Net, Trumpet. Prosthetic Leg",
+			"Pistol (d6), Grease, Hacksaw. One Arm"
 		},
 		{
-			"Musket (d8), Club (d6), Immunity to extreme heat and cold",
-			"Musket (d8), Protective Gloves, Arcanum",
-			"Musket (d8), Mallet, Marbles, Fancy Hat, Arcanum",
+			"Musket (d8 B), Club (d6). Immunity to extreme heat and cold",
+			"Musket (d8 B), Protective Gloves, Arcanum",
+			"Musket (d8 B), Mallet, Marbles, Fancy Hat, Arcanum",
 			"Pick-Axe (d6), Manacles, Arcanum",
 			"Pistol (d6), Smoke-bomb, Mutt, Shovel",
-			"Longaxe (d8), Throwing Axes, Fire Oil",
+			"Longaxe (d8 B), Throwing Axes, Fire Oil",
 			"Club (d6), Ether, Crowbar, Flute",
-			"Hatchet (d6), Net, Fire Oil, Burnt Face",
-			"Club (d6), Paint, Crowbar, Loud Lungs",
-			"Pistol (d6), Cigars, Poison, Fugitive"
+			"Hatchet (d6), Net, Fire Oil. Burnt Face",
+			"Club (d6), Paint, Crowbar. Loud Lungs",
+			"Pistol (d6), Cigars, Poison. Fugitive"
 		},
 		{
-			"Pistol (d6), Knife (d6), Telepathy if target fails WIL SAVE",
-			"Claymore (d8), Pistol (d6), 2 Acid Flasks, Arcanum",
-			"Musket (d8), Bayonet (d6), Mutt with telepathic link",
-			"Pistol (d6), Toxin-Immune, Rocket",
-			"Musket (d8), Portable Ram, Game Set",
+			"Pistol (d6), Knife (d6), Telepathy if target fails WIL Save",
+			"Claymore (d8 B), Pistol (d6), 2 Acid Flasks, Arcanum",
+			"Musket (d8 B), Bayonet (d6), Mutt with telepathic link",
+			"Pistol (d6), Rocket. Toxin-Immune",
+			"Musket (d8 B), Portable Ram, Game Set",
 			"Pistol (d6), Saw, Animal Trap, Spyglass",
-			"Bow (d6), Knife (d6), Rocket, Fire Oil",
-			"Pistol (d6), Whip (d6), Cigars, Lost Eye",
-			"Musket (d8), Accordion, No Nose/Scent",
-			"Sword (d6), Shield Armour, Illiterate"
+			"Bow (d6 B), Knife (d6), Rocket, Fire Oil",
+			"Pistol (d6), Whip (d6), Cigars. Lost Eye",
+			"Musket (d8 B), Accordion. No Nose/Scent",
+			"Sword (d6), Shield. Illiterate"
 		},
 		{
-			"Blunderbuss (d8), Hatchet (d6), Mutt, Dreams show your undiscovered surroundings",
-			"Pistol Brace (d8), Steel Wire, Grappling Hook, Arcanum",
-			"Machete (d6), Pistol Brace (d8), Talking Parrot, Never Sleep",
-			"Harpoon Gun (d8), Baton (d6), Acid, Slightly Magnetic",
-			"Pistol (d6), Ether, Poison, Arcanum",
-			"Bolt-Cutters, Blunderbuss (d8), Fiddle",
-			"Sword & Dagger (d8), Magnifying Glass, Lost Eye",
-			"Pistol (d6), Acid, Animal Repellent, Prosthetic Hand",
-			"Sword (d6), Steel Wire, Ugly Mutation",
-			"Sword (d6), Ferret, Tattered Clothes, Debt (3g)"
+			"Blunderbuss (d8 B), Hatchet (d6), Mutt. Dreams show your undiscovered surroundings",
+			"Brace of Pistols (d8 B), Steel Wire, Grappling Hook, Arcanum",
+			"Machete (d6), Brace of Pistols (d8 B), Talking Parrot. Never Sleep",
+			"Harpoon Gun (d8 B), Baton (d6), Acid. Slightly Magnetic",
+			"Bolt-Cutters, Blunderbuss(d8 B), Fiddle",
+			"Pistol (d6), Grease, Hand Drill, Drum",
+			"Sword & Dagger (d8 B), Magnifying Glass. Lost Eye",
+			"Pistol (d6), Acid, Animal Repellent. Prosthetic Hand"
+			"Sword (d6), Steel Wire. Ugly Mutation",
+			"Sword (d6), Ferret, Tattered Clothes. Debt (3G)"
 		},
 		{
-			"Musket (d8), Hatchet (d6), Flashbang, Iron Limb, Arcanum",
-			"Rifle (d8), Mace (d6), Eagle, Poison",
-			"Club (d6), 3 Bombs, Rocket, Darkvision",
-			"Maul (d8), Dagger (d6), Chain",
-			"Longaxe (d8), Rum, Bomb",
+			"Musket (d8 B), Hatchet (d6), Flashbang, Iron Limb. Arcanum",
+			"Rifle (d8 B), Mace (d6), Eagle, Poison",
+			"Club (d6), 3 Bombs, Rocket. Darkvision",
+			"Maul (d8 B), Dagger (d6), Chain",
+			"Longaxe (d8 B), Rum, Bomb",
 			"Dagger (d6), Fire Oil, Mirror",
 			"Pistol (d6), Knife (d6), Bomb, Saw",
-			"Pistol (d6), Bomb, Shovel, Glowing Eyes",
-			"Staff (d8), Throwing, Knives (d6)",
-			"Mace (d6), Pigeon, Disfigured"
+			"Pistol (d6), Bomb, Shovel. Glowing Eyes",
+			"Staff (d6 B), Throwing Knives (d6)",
+			"Mace (d6), Pigeon. Disfigured"
 		}
 	} };
 
-	std::string equipment = gear[hit_points - 1][max_score];
+	std::string equipment = gear[hit_protection - 1][max_score];
 
 	std::cout << "Strength: " << strength << "\n";
 	std::cout << "Dexterity: " << dexterity << "\n";
 	std::cout << "Wisdom: " << wisdom << "\n";
-	std::cout << "Hit Points: " << hit_points << "\n";
+	std::cout << "Hit Protection: " << hit_protection << "\n";
 	std::cout << "Equipment: " << equipment << "\n";
+	std::cout << "\nCompanion:\n";
+	std::cout << "  Strength: " << roll() + roll() + roll() << "\n";
+	std::cout << "  Dexterity: " << roll() + roll() + roll() << "\n";
+	std::cout << "  Wisdom: " << roll() + roll() + roll() << "\n";
+	std::cout << "  Hit Protection: 1\n";
+	std::cout << "  Equipment: Hand Weapon (d6)\n";
 }
