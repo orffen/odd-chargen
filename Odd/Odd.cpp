@@ -114,7 +114,7 @@ int main()
 	} };
 
 	std::string equipment = gear[hit_protection - 1][max_score];
-	int has_arcanum = equipment.find("Arcanum");
+	size_t has_arcanum = equipment.find("Arcanum");
 	if (has_arcanum != std::string::npos)
 		equipment.insert(has_arcanum + 7, ": " + generate_arcanum(roll(), roll()));
 
