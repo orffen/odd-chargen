@@ -21,6 +21,9 @@
     <ClInclude Include="arcanum.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="hand_weapon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Odd.cpp">
@@ -30,6 +33,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="arcanum.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hand_weapon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

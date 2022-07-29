@@ -1,5 +1,5 @@
 /* Odd.cpp : Into the Odd Character Generator
- * Copyright (c) 2019 Steve Simenic
+ * Copyright (c) 2022 Steve Simenic
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@
 
 #include "roll.h"
 #include "arcanum.h"
+#include "hand_weapon.h"
 #include <algorithm>
 #include <iostream>
 #include <string>
@@ -126,5 +127,5 @@ int main()
 		<< "  Dexterity: " << roll() + roll() + roll() << "\n"
 		<< "  Wisdom: " << roll() + roll() + roll() << "\n"
 		<< "  Hit Protection: 1\n"
-		<< "  Equipment: Hand Weapon (d6)\n";
+		<< "  Equipment: " << generate_hand_weapon() << " (d6)\n";
 }

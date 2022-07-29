@@ -1,4 +1,4 @@
-/* roll.cpp : Into the Odd Character Generator
+/* hand_weapon.h : Into the Odd Character Generator
  * Copyright (c) 2022 Steve Simenic
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -21,15 +21,13 @@
  *
  */
 
-#include "roll.h"
+#pragma once
 #include <random>
+#include <string>
+#include <vector>
+#ifndef HAND_WEAPON_H
+#define HAND_WEAPON_H
 
-int roll() 
-    // rolls a d6, returns the result
-{
-    std::random_device rd;
-    // std::mt19937 gen(rd());
-    std::minstd_rand gen(rd());
-    std::uniform_int_distribution<> dist(1, 6);
-    return dist(gen);
-}
+std::string generate_hand_weapon();
+
+#endif // !HAND_WEAPON_H
