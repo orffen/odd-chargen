@@ -100,7 +100,7 @@ int main()
 			"Sword (d6), Ferret, Tattered Clothes. Debt (3G)"
 		},
 		{
-			"Musket (d8 B), Hatchet (d6), Flashbang, Iron Limb. Arcanum",
+			"Musket (d8 B), Hatchet (d6), Flashbang, Arcanum. Iron Limb",
 			"Rifle (d8 B), Mace (d6), Eagle, Poison",
 			"Club (d6), 3 Bombs, Rocket. Darkvision",
 			"Maul (d8 B), Dagger (d6), Chain",
@@ -114,8 +114,9 @@ int main()
 	} };
 
 	std::string equipment = gear[hit_protection - 1][max_score];
-	if (equipment.find("Arcanum") != std::string::npos)
-		equipment.append(": " + generate_arcanum(roll(), roll()));
+	int has_arcanum = equipment.find("Arcanum");
+	if (has_arcanum != std::string::npos)
+		equipment.insert(has_arcanum + 7, ": " + generate_arcanum(roll(), roll()));
 
 	std::cout << "Strength: " << strength << "\n"
 		<< "Dexterity: " << dexterity << "\n"
