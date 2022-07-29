@@ -155,9 +155,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="arcanum.h" />
     <ClInclude Include="roll.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="arcanum.cpp" />
     <ClCompile Include="Odd.cpp" />
     <ClCompile Include="roll.cpp" />
   </ItemGroup>

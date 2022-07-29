@@ -22,6 +22,7 @@
  */
 
 #include "roll.h"
+#include "arcanum.h"
 #include <algorithm>
 #include <iostream>
 #include <string>
@@ -74,7 +75,7 @@ int main()
 			"Pistol (d6), Cigars, Poison. Fugitive"
 		},
 		{
-			"Pistol (d6), Knife (d6), Telepathy if target fails WIL Save",
+			"Pistol (d6), Knife (d6). Telepathy if target fails WIL Save",
 			"Claymore (d8 B), Pistol (d6), 2 Acid Flasks, Arcanum",
 			"Musket (d8 B), Bayonet (d6), Mutt with telepathic link",
 			"Pistol (d6), Rocket. Toxin-Immune",
@@ -112,16 +113,18 @@ int main()
 	} };
 
 	std::string equipment = gear[hit_protection - 1][max_score];
+	if (equipment.find("Arcanum") != std::string::npos)
+		equipment.append(": " + generate_arcanum(roll(), roll()));
 
-	std::cout << "Strength: " << strength << "\n";
-	std::cout << "Dexterity: " << dexterity << "\n";
-	std::cout << "Wisdom: " << wisdom << "\n";
-	std::cout << "Hit Protection: " << hit_protection << "\n";
-	std::cout << "Equipment: " << equipment << "\n";
-	std::cout << "\nCompanion:\n";
-	std::cout << "  Strength: " << roll() + roll() + roll() << "\n";
-	std::cout << "  Dexterity: " << roll() + roll() + roll() << "\n";
-	std::cout << "  Wisdom: " << roll() + roll() + roll() << "\n";
-	std::cout << "  Hit Protection: 1\n";
-	std::cout << "  Equipment: Hand Weapon (d6)\n";
+	std::cout << "Strength: " << strength << "\n"
+		<< "Dexterity: " << dexterity << "\n"
+		<< "Wisdom: " << wisdom << "\n"
+		<< "Hit Protection: " << hit_protection << "\n"
+		<< "Equipment: " << equipment << "\n"
+		<< "\nCompanion:\n"
+		<< "  Strength: " << roll() + roll() + roll() << "\n"
+		<< "  Dexterity: " << roll() + roll() + roll() << "\n"
+		<< "  Wisdom: " << roll() + roll() + roll() << "\n"
+		<< "  Hit Protection: 1\n"
+		<< "  Equipment: Hand Weapon (d6)\n";
 }
