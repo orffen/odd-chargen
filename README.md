@@ -1,11 +1,11 @@
 # Into the Odd Character Generator
 
-This is a character generator for the tabletop roleplaying game [Into the Odd](https://www.drivethrurpg.com/product/145536/Into-the-Odd). 
+This is a character generator for the tabletop roleplaying game [Into the Odd Remastered](https://freeleaguepublishing.com/en/games/into-the-odd/). 
 
 Simply run the compiled executable and it will spit out a character right to your console.
 
 
-Copyright (c) 2019 Steve Simenic
+Copyright (c) 2022 Steve Simenic
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
